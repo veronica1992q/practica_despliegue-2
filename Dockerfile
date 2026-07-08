@@ -1,5 +1,5 @@
 # Dockerfile
-FROM node:18
+FROM node:16
 
 # Crear directorio de la aplicación
 WORKDIR /usr/src/app
@@ -10,6 +10,9 @@ COPY index.js .
 
 # Instalar dependencias
 RUN npm install
+
+# Copiar el resto de los archivos
+COPY users.json .       
 
 # Exponer el puerto de la aplicación
 EXPOSE 3000
