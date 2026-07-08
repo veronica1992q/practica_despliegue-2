@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        nodejs "Node18" // Asume que tienes configurada una instalación llamada "Node18" en Jenkins
+        nodejs "Node18"
     }
 
     stages {
@@ -35,7 +35,7 @@ pipeline {
                 sh '''
                     docker stop hola-mundo-node || true
                     docker rm hola-mundo-node || true
-                    docker run -d --name hola-mundo-node -p 3000:3000 hola-mundo-node:latest
+                    docker run -d --name hola-mundo-node -p 3001:3000 hola-mundo-node:latest
                 '''
             }
         }
